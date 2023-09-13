@@ -11,7 +11,7 @@ var floor_map = {}
 
 func _ready():
 	randomize()
-	
+
 	for x in size_world:
 		for y in size_world:
 			var key = get_key(x,y)
@@ -20,7 +20,6 @@ func _ready():
 			tile.position.y = y * size_tile
 			
 			var tipe = randi_range(0, 5)
-			print(tipe)
 			tile.set_tipe(tipe)
 			
 			floor_map[key] = tile

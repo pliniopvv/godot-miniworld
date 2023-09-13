@@ -1,0 +1,34 @@
+[gd_scene load_steps=7 format=3 uid="uid://dfa0686pp5qu7"]
+
+[ext_resource type="Texture2D" uid="uid://cx844slh2t8vk" path="res://assets/Ground/TexturedGrass.png" id="1_dt2eq"]
+[ext_resource type="Script" path="res://nodes/terrain/tilemap.gd" id="2_f27f1"]
+[ext_resource type="Texture2D" uid="uid://irtg65n0c8h6" path="res://assets/Ground/Shore.png" id="2_isk13"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_akj0t"]
+texture = ExtResource("1_dt2eq")
+0:0/next_alternative_id = 3
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_brx5h"]
+texture = ExtResource("2_isk13")
+0:0/0 = 0
+1:0/0 = 0
+2:0/next_alternative_id = 2
+2:0/0 = 0
+3:0/0 = 0
+4:0/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_s22up"]
+sources/0 = SubResource("TileSetAtlasSource_akj0t")
+sources/1 = SubResource("TileSetAtlasSource_brx5h")
+
+[node name="tilemap" type="TileMap"]
+tile_set = SubResource("TileSet_s22up")
+format = 2
+layer_0/name = "Terreno"
+script = ExtResource("2_f27f1")
