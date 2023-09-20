@@ -1,17 +1,21 @@
-[gd_scene load_steps=4 format=3 uid="uid://bfj5ws2boeey8"]
+[gd_scene load_steps=5 format=3 uid="uid://bfj5ws2boeey8"]
 
 [ext_resource type="Script" path="res://main/terrain.gd" id="2_rev8w"]
 [ext_resource type="PackedScene" uid="uid://ddrovitu0nics" path="res://nodes/terrain/grama/grama.tscn" id="3_4adhy"]
 [ext_resource type="PackedScene" uid="uid://nkrao5psvibi" path="res://nodes/player/player.tscn" id="3_cdbje"]
+[ext_resource type="Script" path="res://nodes/player/camera.gd" id="4_e8img"]
 
 [node name="main" type="Node2D"]
 
-[node name="terrain" type="Node2D" parent="."]
+[node name="terrain" type="Node2D" parent="." node_paths=PackedStringArray("player")]
 script = ExtResource("2_rev8w")
+size_world = Vector2(72, 40)
 grama = ExtResource("3_4adhy")
+player = NodePath("../player")
 
 [node name="player" parent="." instance=ExtResource("3_cdbje")]
 position = Vector2(8, 9)
 
 [node name="camera" type="Camera2D" parent="player"]
-visible = false
+zoom = Vector2(2, 2)
+script = ExtResource("4_e8img")

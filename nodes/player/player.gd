@@ -29,9 +29,9 @@ func str_dir(d):
 	var x = d.x
 	var y = d.y
 	if x < 0:
-		return "_right"
-	elif x > 0:
 		return "_left"
+	elif x > 0:
+		return "_right"
 	if y < 0:
 		return "_up"
 	elif y > 0:
